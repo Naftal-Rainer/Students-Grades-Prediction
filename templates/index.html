@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students' Grade Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <div>
+        <header>
+            <h1>Students' Grade Prediction</h1>
+        </header>    
+    </div>
+
+    <div class="details">
+        <form action="/result" method="POST" >
+              <fieldset>
+                <legend>Personal Information:</legend>
+                <label for="fname">Full names:</label>
+                <input type="text" id="fname" name="fname" required><br><br>
+
+                <label for="gender">Gender:</label> <br>
+                <input type="radio" id="gender" name="gender" value="1" required> Male
+                <input type="radio" id="gender" name="gender" value="0" required> Female
+                <br><br>
+
+                <label for="romantic">Are you engaged in any form of romantic relationship?</label> <br>
+                <input type="radio" id="romantic" name="romantic" value="1" required> Yes
+                <input type="radio" id="romantic" name="romantic" value="0" required> No
+                <input type="radio" id="romantic" name="romantic" value="0" required> Prefer not to say
+                <br><br>
+
+                <label for="birthday"> Date of Birth:</label>
+                <input type="date" id="birthday" name="birthday" required><br><br>
+              </fieldset>
+
+              <fieldset>
+                <legend>Education Background:</legend>
+                <label for="nursery">Attended Nursery:</label> <br>
+                <input type="radio" id="nursery" name="nursery" value="1" required> Yes
+                <input type="radio" id="nursery" name="nursery" value="0" required> No
+                <br><br>
+
+                <label for="higher_ed">Higher Education:</label> <br>
+                <input type="radio" id="higher_ed" name="higher_ed" value="1" required> Yes
+                <input type="radio" id="higher_ed" name="higher_ed" value="0" required> No
+                <br><br>
+
+                <label for="higher_ed">Current Enrolled School (University):</label> <br>
+                <select name="school" id="school" required>
+                    <option value="0">COHRED</option>
+                    <option value="1">COPAS</option>
+                </select>
+                <br><br>
+
+                <label for="paid">Current Fee Status:</label> <br>
+                <input type="radio" id="paid" name="paid" value="1" required> Paid
+                <input type="radio" id="paid" name="paid" value="0" required> Not Paid
+                <br><br>
+
+                <label for="famsup">Family Support Towards Fee Payment:</label> <br>
+                <input type="radio" id="famsup" name="famsup" value="1" required> Yes
+                <input type="radio" id="famsup" name="famsup" value="0" required> No
+                <br><br>
+
+                <label for="schoolsup">School Support Towards Fee Payment:</label> <br>
+                <input type="radio" id="schoolsup" name="schoolsup" value="1" required> Yes
+                <input type="radio" id="schoolsup" name="schoolsup" value="0" required> No
+                <br><br>
+
+                <label for="activities">Co - Curriculum Activity Engagement:</label> <br>
+                <input type="radio" id="activities" name="activities" value="1" required> Yes
+                <input type="radio" id="activities" name="activities" value="0" required> No
+                <br><br>
+
+                <label for="cat_1">Cat 1 Marks :</label>
+                <input type="number" name="cat_1" id="cat_1" required>
+                <br><br>
+
+                <label for="cat_2">Cat 2 Marks :</label>
+                <input type="number" name="cat_2" id="cat_2" required>
+                <br><br>
+
+                <label for="failures">Supplimentary Count (Previous Semester) :</label>
+                <input type="number" name="failures" id="failures" required placeholder="Input between 0 - 4">
+                <br><br>
+
+                <label for="absences">Hours Absent (Whole Semester) :</label>
+                <input type="number" name="absences" id="absences" required>
+                <br><br>
+
+                <label for="Studytime">Daily Study Time (In Hours):</label>
+                <input type="number" name="Studytime" id="Studytime" required>
+                <br><br>
+              </fieldset>
+
+              <fieldset>
+                <legend>Family Background:</legend>
+                <label for="guardian">Family Status:</label> <br>
+                <select name="guardian" id="guardian" required>
+                    <option value="2">Both Parents Alive</option>
+                    <option value="0">No Parent Alive</option>
+                    <option value="1">One Parent Alive</option>
+                </select>
+                <br><br>
+
+                <label for="Parents_status">Parents Status:</label> <br>
+                <select name="Parents_status" id="Parents_status" required>
+                    <option value="1">Together</option>
+                    <option value="0">Apart</option>
+                </select>
+                <br><br>
+
+                <label for="famsize">Family Size:</label> <br>
+                <input type="radio" id="famsize" name="famsize" value="1" required> Greater Than 3
+                <input type="radio" id="famsize" name="famsize" value="0" required> Less Than 3
+                <br><br>
+
+                <label for="mjob">Mother's Job:</label> <br>
+                <select name="mjob" id="mjob" required>
+                    <option value="0">Jobless</option>
+                    <option value="1">Teacher</option>
+                    <option value="2">Health</option>
+                    <option value="3">Services</option>
+                    <option value="4">Other</option>
+                </select>
+                <br><br>
+
+                <label for="medu">Mother's Education:</label> <br>
+                <select name="medu" id="medu" required>
+                    <option value="0">No Education</option>
+                    <option value="1">Primary</option>
+                    <option value="2">Higher</option>
+                    <option value="3">University</option>
+                    <option value="4">Tertiary</option>
+                </select>
+                <br><br>
+
+                <label for="fedu">Father's Education:</label> <br>
+                <select name="fedu" id="fedu" required>
+                    <option value="0">No Education</option>
+                    <option value="1">Primary</option>
+                    <option value="2">Higher</option>
+                    <option value="3">University</option>
+                    <option value="4">Tertiary</option>
+                </select>
+                <br><br>
+
+                <label for="fjob">Father's Job:</label> <br>
+                <select name="fjob" id="fjob" required>
+                    <option value="0">Jobless</option>
+                    <option value="1">Teacher</option>
+                    <option value="2">Health</option>
+                    <option value="3">Services</option>
+                    <option value="4">Other</option>
+                </select>
+                <br><br>
+              </fieldset>
+
+              <fieldset>
+                <legend>Miscellaneous:</legend>
+                <label for="traveltime">Daily Travel Time (In Hours):</label>
+                <input type="number" name="traveltime" id="traveltime" required>
+                <br><br>
+
+                <label for="freetime">Daily Free Time (In Hours):</label>
+                <input type="number" name="freetime" id="freetime" required>
+                <br><br>
+
+                <label for="goout">Time spent on dates (In Hours):</label>
+                <input type="number" name="goout" id="goout" required>
+                <br><br>
+
+                <label for="internet">Do you have access to Internet?:</label> <br>
+                <input type="radio" id="internet" name="internet" value="1" required> Yes
+                <input type="radio" id="internet" name="internet" value="0" required> No
+                <br><br>
+
+                <label for="health">Rate Your Health Status:</label> <br>
+                <input type="range" id="health" name="health" min="1" max="5">
+                <br><br>
+
+            
+                <input type="submit" onclick="funshows()" value="Submit">
+              </fieldset>
+                            
+        </form>
+        <div class="results" >
+            <p>Welcome <span>{{ names }}</span></p>
+            <br>
+            <p>Your Predicted Overall Grade is: {{ grade }} </p>
+
+            <button type="submit" onclick="show()">See Probable Result</button>
+            <br>
+            <p id="score">Your Predicted Overall Score is: {{ prediction }} </p>
+        </div>
+    </div>
+    
+    <script src="../static/script.js"></script>
+</body>
+</html>
