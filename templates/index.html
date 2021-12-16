@@ -53,12 +53,15 @@
                 <select name="school" id="school" required>
                     <option value="0">COHRED</option>
                     <option value="1">COPAS</option>
+                    <option value="0">COHES</option>
+                    <option value="1">COANRE</option>
+                    <option value="0">COETEC</option>
                 </select>
                 <br><br>
 
-                <label for="paid">Current Fee Status:</label> <br>
-                <input type="radio" id="paid" name="paid" value="1" required> Paid
-                <input type="radio" id="paid" name="paid" value="0" required> Not Paid
+                <label for="paid">Extra Classes within the course. e.g CPA, ICDL etc:</label> <br>
+                <input type="radio" id="paid" name="paid" value="1" required> Yes
+                <input type="radio" id="paid" name="paid" value="0" required> No
                 <br><br>
 
                 <label for="famsup">Family Support Towards Fee Payment:</label> <br>
@@ -92,8 +95,13 @@
                 <input type="number" name="absences" id="absences" required>
                 <br><br>
 
-                <label for="Studytime">Daily Study Time (In Hours):</label>
-                <input type="number" name="Studytime" id="Studytime" required>
+                <label for="Studytime">Weekly Study Time:</label>
+                <select name="Studytime" id="Studytime" required>
+                    <option value="1">Less than 2 Hours</option>
+                    <option value="2">Between 2 to 5 Hours</option>
+                    <option value="3">Between 5 to 10 Hours</option>
+                    <option value="4">More than 10 Hours</option>
+                </select>
                 <br><br>
               </fieldset>
 
@@ -170,7 +178,7 @@
                 <input type="number" name="freetime" id="freetime" required>
                 <br><br>
 
-                <label for="goout">Time spent on dates (In Hours):</label>
+                <label for="goout">Time spent out with friends:</label>
                 <input type="number" name="goout" id="goout" required>
                 <br><br>
 
@@ -188,6 +196,8 @@
               </fieldset>
                             
         </form>
+
+
         {% if prediction %}
 
         <div class="results" >
@@ -202,6 +212,7 @@
     </div>
           
         {% endif %}
+        
     
     <script src="../static/script.js"></script>
 </body>
