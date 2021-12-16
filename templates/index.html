@@ -188,6 +188,8 @@
               </fieldset>
                             
         </form>
+        {% if prediction %}
+
         <div class="results" >
             <p>Welcome <span>{{ names }}</span></p>
             <br>
@@ -198,6 +200,8 @@
             <p id="score">Your Predicted Overall Score is: {{ prediction }} </p>
         </div>
     </div>
+          
+        {% endif %}
     
     <script src="../static/script.js"></script>
 </body>
